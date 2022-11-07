@@ -2,14 +2,35 @@ import React from 'react';
 
 import { TitleDescription } from './TitleDescription';
 
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY
+} from "@storybook/addon-docs/blocks"
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Common/TitleDescription',
   component: TitleDescription,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+        <Title />
+        <Subtitle />
+        <Description />
+        <Primary />
+        <ArgsTable />
+        <Stories />
+        <PRIMARY_STORY />
+        </>
+      )
+    }
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
